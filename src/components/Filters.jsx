@@ -2,10 +2,10 @@ import React from "react";
 import Switch from "react-switch";
 
 const Filters = ({ data, filters, onFilterChange }) => {
-	//! Exclude specific fields such as 'id' and 'name'
+	// Exclude specific fields such as 'id' and 'name'
 	const excludedKeys = new Set(["id", "name"]);
 
-	//! Get all unique keys from the data, excluding the specified keys
+	// Get all unique keys from the data, excluding the specified keys
 	const allKeys = Array.from(new Set(data.flatMap(Object.keys))).filter(
 		(key) => !excludedKeys.has(key)
 	);
@@ -15,7 +15,7 @@ const Filters = ({ data, filters, onFilterChange }) => {
 	};
 
 	const handleSwitchChange = (filterName, value) => {
-		onFilterChange(filterName, value ? filterName : "");
+		onFilterChange(filterName, value ? value : "");
 	};
 
 	return (

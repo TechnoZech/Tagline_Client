@@ -5,7 +5,6 @@ const Table = ({ data }) => {
 		return <div>No data available</div>;
 	}
 
-	//! Create a set of all keys present in the data array
 	const allKeys = Array.from(
 		data.reduce((keys, item) => {
 			Object.keys(item).forEach((key) => keys.add(key));
